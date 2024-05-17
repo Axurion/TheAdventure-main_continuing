@@ -1,0 +1,14 @@
+# Target labels
+ fmt-10.1.1-populate
+# Source files and their labels
+C:/Users/Axur/Desktop/proiecte c++/TheAdventure-main/TheAdventure-main/cmake-build-debug/_deps/fmt-10.1.1-subbuild/CMakeFiles/fmt-10.1.1-populate
+C:/Users/Axur/Desktop/proiecte c++/TheAdventure-main/TheAdventure-main/cmake-build-debug/_deps/fmt-10.1.1-subbuild/CMakeFiles/fmt-10.1.1-populate.rule
+C:/Users/Axur/Desktop/proiecte c++/TheAdventure-main/TheAdventure-main/cmake-build-debug/_deps/fmt-10.1.1-subbuild/CMakeFiles/fmt-10.1.1-populate-complete.rule
+C:/Users/Axur/Desktop/proiecte c++/TheAdventure-main/TheAdventure-main/cmake-build-debug/_deps/fmt-10.1.1-subbuild/fmt-10.1.1-populate-prefix/src/fmt-10.1.1-populate-stamp/fmt-10.1.1-populate-build.rule
+C:/Users/Axur/Desktop/proiecte c++/TheAdventure-main/TheAdventure-main/cmake-build-debug/_deps/fmt-10.1.1-subbuild/fmt-10.1.1-populate-prefix/src/fmt-10.1.1-populate-stamp/fmt-10.1.1-populate-configure.rule
+C:/Users/Axur/Desktop/proiecte c++/TheAdventure-main/TheAdventure-main/cmake-build-debug/_deps/fmt-10.1.1-subbuild/fmt-10.1.1-populate-prefix/src/fmt-10.1.1-populate-stamp/fmt-10.1.1-populate-download.rule
+C:/Users/Axur/Desktop/proiecte c++/TheAdventure-main/TheAdventure-main/cmake-build-debug/_deps/fmt-10.1.1-subbuild/fmt-10.1.1-populate-prefix/src/fmt-10.1.1-populate-stamp/fmt-10.1.1-populate-install.rule
+C:/Users/Axur/Desktop/proiecte c++/TheAdventure-main/TheAdventure-main/cmake-build-debug/_deps/fmt-10.1.1-subbuild/fmt-10.1.1-populate-prefix/src/fmt-10.1.1-populate-stamp/fmt-10.1.1-populate-mkdir.rule
+C:/Users/Axur/Desktop/proiecte c++/TheAdventure-main/TheAdventure-main/cmake-build-debug/_deps/fmt-10.1.1-subbuild/fmt-10.1.1-populate-prefix/src/fmt-10.1.1-populate-stamp/fmt-10.1.1-populate-patch.rule
+C:/Users/Axur/Desktop/proiecte c++/TheAdventure-main/TheAdventure-main/cmake-build-debug/_deps/fmt-10.1.1-subbuild/fmt-10.1.1-populate-prefix/src/fmt-10.1.1-populate-stamp/fmt-10.1.1-populate-test.rule
+C:/Users/Axur/Desktop/proiecte c++/TheAdventure-main/TheAdventure-main/cmake-build-debug/_deps/fmt-10.1.1-subbuild/fmt-10.1.1-populate-prefix/src/fmt-10.1.1-populate-stamp/fmt-10.1.1-populate-update.rule

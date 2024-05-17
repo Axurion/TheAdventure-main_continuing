@@ -1,0 +1,279 @@
+#include "skeleton.h"
+#include "codes.h"
+#include "game.h"
+#include "map.h"
+
+#include <resources.h>
+
+#include <iostream>
+#include <random>
+
+enum SpriteSet
+{
+    IdleDown,
+    IdleRight,
+    IdleUp,
+    RunningDown,
+    RunningRight,
+    RunningUp,
+    AttackingDown,
+    AttackingRight,
+    AttackingUp,
+    TakingDamageDown,
+    TakingDamageRight,
+    TakingDamageUp,
+    Death
+};
+
+static constexpr std::int32_t MAX_FRAMES    = 6;
+static constexpr std::int32_t IDLE_FRAMES   = 6;
+static constexpr std::int32_t RUNNING_FRAMES   = 6;
+static constexpr std::int32_t ATTACK_FRAMES = 6;
+static constexpr std::int32_t DAMAGE_FRAMES = 3;
+static constexpr std::int32_t DEATH_FRAMES  = 5;
+
+Skeleton::Skeleton(Renderer &renderer, Sound &sound)
+        : m_sprite{ resource_skeleton, resource_skeleton_size, renderer }
+        , m_generator{ std::random_device{}() }
+        , m_distribution{ 0, 10 }
+        , m_sound{ sound }
+{
+    width()  = m_sprite.width() / MAX_FRAMES;
+    height() = m_sprite.height() / MAX_FRAMES;
+
+    set_collision_box({ 5, 5, 22, 21 });
+    set_aggro_area({ -22, -18, 76, 72 });
+
+    m_sprite.set_sprite_set(SpriteSet::IdleRight);
+    m_sprite.set_total_frames(MAX_FRAMES, MAX_FRAMES - IDLE_FRAMES);
+    m_sprite.set_frame_time(std::chrono::milliseconds{ 100 });
+
+    m_attack_sound_id =
+            sound.load_sample(resource__26_sword_hit_1, resource__26_sword_hit_1_size);
+}
+
+void Skeleton::attack()
+{
+    m_is_attacking = true;
+
+    switch (m_orientation)
+    {
+        case Orientation::Left: {
+            m_sprite.set_sprite_set(SpriteSet::AttackingRight, true);
+            break;
+        }
+        case Orientation::Right: {
+            m_sprite.set_sprite_set(SpriteSet::AttackingRight);
+            break;
+        }
+        case Orientation::Up: {
+            m_sprite.set_sprite_set(SpriteSet::AttackingUp);
+            break;
+        }
+
+        case Orientation::Down: {
+            m_sprite.set_sprite_set(SpriteSet::AttackingDown);
+            break;
+        }
+    }
+
+    m_sprite.set_total_frames(MAX_FRAMES, MAX_FRAMES - ATTACK_FRAMES);
+    m_sprite.reset();
+    m_sound.play_sample(m_attack_sound_id);
+}
+
+void Skeleton::update(Game &game, float attenuation)
+{
+    if (m_is_attacking)
+    {
+        if (m_sprite.current_frame() == ATTACK_FRAMES - 1)
+        {
+            m_is_attacking = false;
+        }
+        else
+        {
+            return;
+        }
+    }
+    else if (has_aggro())
+    {
+        const auto *aggro_for = dynamic_cast<ICollidable *>(aggravated_by());
+        if (aggro_for == nullptr)
+        {
+            return;
+        }
+
+        if (!is_colliding(*aggro_for))
+        {
+            const auto *aggravated_by = this->aggravated_by();
+
+            if (aggravated_by->x() < x())
+            {
+                x() -= m_speed * attenuation;
+                m_orientation = Orientation::Left;
+            }
+            else
+            {
+                x() += m_speed * attenuation;
+                m_orientation = Orientation::Right;
+            }
+
+            if (aggravated_by->y() < y())
+            {
+                y() -= m_speed * attenuation;
+            }
+            else
+            {
+                y() += m_speed * attenuation;
+            }
+
+            m_sprite.set_sprite_set(SpriteSet::RunningRight, m_orientation == Orientation::Left);
+            m_sprite.set_total_frames(MAX_FRAMES, MAX_FRAMES - RUNNING_FRAMES);
+        }
+        else
+        {
+            attack();
+        }
+
+        return;
+    }
+
+    const auto now = std::chrono::steady_clock::now();
+    if (now - m_last_gen_time >= std::chrono::seconds{ 1 })
+    {
+        m_last_gen_time = now;
+
+        switch (m_distribution(m_generator))
+        {
+            case 0: {
+                m_direction = Direction::Up;
+                m_is_moving = true;
+                break;
+            }
+            case 1: {
+                m_direction = Direction::Down;
+                m_is_moving = true;
+                break;
+            }
+            case 2: {
+                m_direction = Direction::Left;
+                m_is_moving = true;
+                break;
+            }
+            case 3: {
+                m_direction = Direction::Right;
+                m_is_moving = true;
+                break;
+            }
+            default:
+                m_is_moving = false;
+                break;
+        }
+    }
+
+    if (m_is_moving)
+    {
+        switch (m_direction)
+        {
+            case Direction::Up: {
+                y() -= m_speed * attenuation;
+                m_sprite.set_sprite_set(SpriteSet::RunningUp, m_orientation == Orientation::Up);
+                m_sprite.set_total_frames(MAX_FRAMES, MAX_FRAMES - RUNNING_FRAMES);
+
+                m_is_moving = true;
+                break;
+            }
+            case Direction::Down: {
+                y() += m_speed * attenuation;
+                m_sprite.set_sprite_set(SpriteSet::RunningDown, m_orientation == Orientation::Down);
+                m_sprite.set_total_frames(MAX_FRAMES, MAX_FRAMES - RUNNING_FRAMES);
+
+                m_is_moving = true;
+                break;
+            }
+            case Direction::Left: {
+                x() -= m_speed * attenuation;
+                m_sprite.set_sprite_set(SpriteSet::RunningRight, true);
+                m_sprite.set_total_frames(MAX_FRAMES, MAX_FRAMES - RUNNING_FRAMES);
+                m_orientation = Orientation::Left;
+
+                m_is_moving = true;
+                break;
+            }
+            case Direction::Right: {
+                x() += m_speed * attenuation;
+                m_sprite.set_sprite_set(SpriteSet::RunningRight);
+                m_sprite.set_total_frames(MAX_FRAMES, MAX_FRAMES - RUNNING_FRAMES);
+                m_orientation = Orientation::Right;
+
+                m_is_moving = true;
+                break;
+            }
+        }
+    }
+    else if (!m_is_attacking)
+    {
+        // Go to idle
+        switch (m_orientation)
+        {
+            case Orientation::Left: {
+                m_sprite.set_sprite_set(SpriteSet::IdleRight, true);
+                break;
+            }
+            case Orientation::Right: {
+                m_sprite.set_sprite_set(SpriteSet::IdleRight);
+                break;
+            }
+            case Orientation::Up: {
+                m_sprite.set_sprite_set(SpriteSet::IdleUp);
+                break;
+            }
+            case Orientation::Down: {
+                m_sprite.set_sprite_set(SpriteSet::IdleDown);
+                break;
+            }
+        }
+
+        if (m_sprite.total_frames() != IDLE_FRAMES)
+        {
+            m_sprite.set_total_frames(MAX_FRAMES, MAX_FRAMES - IDLE_FRAMES);
+            m_sprite.reset();
+        }
+    }
+}
+
+void Skeleton::render(Renderer &renderer, const Map::Viewport &viewport)
+{
+    // render_aggro_area(renderer, viewport);
+    m_sprite.render(renderer, x() - viewport.x, y() - viewport.y);
+}
+
+void Skeleton::take_damage(float damage)
+{
+    m_health -= damage;
+
+
+    std::cout << "Skeleton took " << damage << " damage. Health: " << m_health << std::endl;
+
+    if (m_health <= 0.F)
+    {
+
+        m_should_be_destroyed = true;
+
+    }
+}
+
+bool Skeleton::should_be_destroyed()
+{
+    return m_should_be_destroyed;
+}
+
+bool Skeleton::is_attacking() const
+{
+    return m_is_attacking;
+}
+
+float Skeleton::attack_power() const
+{
+    return 0.5F;
+}

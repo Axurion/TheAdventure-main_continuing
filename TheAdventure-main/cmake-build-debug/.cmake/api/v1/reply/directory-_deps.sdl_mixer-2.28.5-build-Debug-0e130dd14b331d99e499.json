@@ -1,0 +1,136 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"cmake-build-debug/_deps/sdl_mixer-2.28.5-src/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 736,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 769,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 777,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 792,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 840,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "devel",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"_deps/sdl_mixer-2.28.5-build/libSDL2_mixer.a"
+			],
+			"targetId" : "SDL2_mixer::@1c1108b2b38db1c2499e",
+			"targetIndex" : 1,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 1,
+			"component" : "devel",
+			"destination" : "include/SDL2",
+			"paths" : 
+			[
+				"cmake-build-debug/_deps/sdl_mixer-2.28.5-src/include/SDL_mixer.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "devel",
+			"destination" : "lib/cmake/SDL2_mixer",
+			"paths" : 
+			[
+				"cmake-build-debug/_deps/sdl_mixer-2.28.5-build/SDL2_mixerConfig.cmake",
+				"cmake-build-debug/_deps/sdl_mixer-2.28.5-build/SDL2_mixerConfigVersion.cmake"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 3,
+			"component" : "devel",
+			"destination" : "lib/cmake/SDL2_mixer",
+			"paths" : 
+			[
+				"cmake-build-debug/_deps/sdl_mixer-2.28.5-src/cmake/FindFLAC.cmake",
+				"cmake-build-debug/_deps/sdl_mixer-2.28.5-src/cmake/FindFluidSynth.cmake",
+				"cmake-build-debug/_deps/sdl_mixer-2.28.5-src/cmake/Findlibxmp.cmake",
+				"cmake-build-debug/_deps/sdl_mixer-2.28.5-src/cmake/Findlibxmp-lite.cmake",
+				"cmake-build-debug/_deps/sdl_mixer-2.28.5-src/cmake/Findmodplug.cmake",
+				"cmake-build-debug/_deps/sdl_mixer-2.28.5-src/cmake/Findopusfile.cmake",
+				"cmake-build-debug/_deps/sdl_mixer-2.28.5-src/cmake/FindMPG123.cmake",
+				"cmake-build-debug/_deps/sdl_mixer-2.28.5-src/cmake/Findvorbisfile.cmake",
+				"cmake-build-debug/_deps/sdl_mixer-2.28.5-src/cmake/Findtremor.cmake"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "devel",
+			"destination" : "lib/cmake/SDL2_mixer",
+			"exportName" : "SDL2MixerTargets",
+			"exportTargets" : 
+			[
+				{
+					"id" : "SDL2_mixer::@1c1108b2b38db1c2499e",
+					"index" : 1
+				}
+			],
+			"paths" : 
+			[
+				"_deps/sdl_mixer-2.28.5-build/CMakeFiles/Export/97cddd3d921342b27159922255cdc1b6/SDL2_mixer-static-targets.cmake"
+			],
+			"type" : "export"
+		},
+		{
+			"backtrace" : 5,
+			"component" : "library",
+			"destination" : "share/licenses/SDL2_mixer",
+			"paths" : 
+			[
+				"cmake-build-debug/_deps/sdl_mixer-2.28.5-src/LICENSE.txt"
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "_deps/sdl_mixer-2.28.5-build",
+		"source" : "cmake-build-debug/_deps/sdl_mixer-2.28.5-src"
+	}
+}

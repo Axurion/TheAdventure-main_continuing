@@ -1,0 +1,3 @@
+C:\Users\Axur\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E rm -f CMakeFiles\the_adventure.dir/objects.a
+C:\Users\Axur\AppData\Local\Programs\CLion\bin\mingw\bin\ar.exe qc CMakeFiles\the_adventure.dir/objects.a @CMakeFiles\the_adventure.dir\objects1.rsp
+C:\Users\Axur\AppData\Local\Programs\CLion\bin\mingw\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\the_adventure.dir/objects.a -Wl,--no-whole-archive -o the_adventure.exe -Wl,--out-implib,libthe_adventure.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\the_adventure.dir\linkLibs.rsp

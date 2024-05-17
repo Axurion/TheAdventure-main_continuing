@@ -1,0 +1,11 @@
+# Hashes of file build rules.
+a076bcbe0d616459d676388a1086c825 CMakeFiles/sdl2-2.28.5-populate
+9ab64410398e7037600ec8deee6eff81 CMakeFiles/sdl2-2.28.5-populate-complete
+eccd06a13aaf818823fcfd3b0a9171d8 sdl2-2.28.5-populate-prefix/src/sdl2-2.28.5-populate-stamp/sdl2-2.28.5-populate-build
+70e8da25999a5fdc2c967710cc5058e7 sdl2-2.28.5-populate-prefix/src/sdl2-2.28.5-populate-stamp/sdl2-2.28.5-populate-configure
+d7237cb2bb3ae071d3ef68732be89224 sdl2-2.28.5-populate-prefix/src/sdl2-2.28.5-populate-stamp/sdl2-2.28.5-populate-download
+36aaa92e18eacd958206201f17ecec52 sdl2-2.28.5-populate-prefix/src/sdl2-2.28.5-populate-stamp/sdl2-2.28.5-populate-install
+4221778036aea271be11ec303dbd92f3 sdl2-2.28.5-populate-prefix/src/sdl2-2.28.5-populate-stamp/sdl2-2.28.5-populate-mkdir
+49251abd75628698b21d7b1efd14e48e sdl2-2.28.5-populate-prefix/src/sdl2-2.28.5-populate-stamp/sdl2-2.28.5-populate-patch
+bf71d6f2eb42dfe538342c13908f5ec9 sdl2-2.28.5-populate-prefix/src/sdl2-2.28.5-populate-stamp/sdl2-2.28.5-populate-test
+8762be99e3f264aefdfdb14428ab875a sdl2-2.28.5-populate-prefix/src/sdl2-2.28.5-populate-stamp/sdl2-2.28.5-populate-update

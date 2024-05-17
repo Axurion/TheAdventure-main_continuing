@@ -1,0 +1,267 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						5,
+						6
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "3rdparty",
+					"childIndexes" : 
+					[
+						2,
+						3,
+						4
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-3rdparty-Debug-15bfd9433c2ace09033c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "3rdparty"
+				},
+				{
+					"build" : "_deps/fmt-10.1.1-build",
+					"jsonFile" : "directory-_deps.fmt-10.1.1-build-Debug-faf5d8ffa8cc7ee1c285.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "cmake-build-debug/_deps/fmt-10.1.1-src",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "_deps/sdl2-2.28.5-build",
+					"jsonFile" : "directory-_deps.sdl2-2.28.5-build-Debug-e5e185ed2e22bea093d0.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.4"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 2,
+					"source" : "cmake-build-debug/_deps/sdl2-2.28.5-src",
+					"targetIndexes" : 
+					[
+						0,
+						2,
+						3,
+						5,
+						8
+					]
+				},
+				{
+					"build" : "_deps/sdl_mixer-2.28.5-build",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-_deps.sdl_mixer-2.28.5-build-Debug-0e130dd14b331d99e499.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 3,
+					"source" : "cmake-build-debug/_deps/sdl_mixer-2.28.5-src",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "src",
+					"jsonFile" : "directory-src-Debug-c94b7c2814d5a21df52c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src",
+					"targetIndexes" : 
+					[
+						6
+					]
+				},
+				{
+					"build" : "res",
+					"jsonFile" : "directory-res-Debug-f10d2458fe16bdca0cf9.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "res",
+					"targetIndexes" : 
+					[
+						7
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3
+					],
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						5,
+						6
+					],
+					"name" : "the_adventure",
+					"targetIndexes" : 
+					[
+						6,
+						7
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "FMT",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "SDL2",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0,
+						2,
+						3,
+						5,
+						8
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4
+					],
+					"name" : "SDL2_mixer",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 3,
+					"id" : "SDL2-static::@d9e926e66644a4d0d9f5",
+					"jsonFile" : "target-SDL2-static-Debug-90dd370a4908ec0dbc90.json",
+					"name" : "SDL2-static",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "SDL2_mixer::@1c1108b2b38db1c2499e",
+					"jsonFile" : "target-SDL2_mixer-Debug-ec0a853594040a3547db.json",
+					"name" : "SDL2_mixer",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "SDL2_test::@d9e926e66644a4d0d9f5",
+					"jsonFile" : "target-SDL2_test-Debug-d25b5d7934700c284b13.json",
+					"name" : "SDL2_test",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "SDL2main::@d9e926e66644a4d0d9f5",
+					"jsonFile" : "target-SDL2main-Debug-387b2652cc069276a9f3.json",
+					"name" : "SDL2main",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "fmt::@1845b73e41a84045f9c6",
+					"jsonFile" : "target-fmt-Debug-d8cb59111a0ea1267786.json",
+					"name" : "fmt",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "sdl_headers_copy::@d9e926e66644a4d0d9f5",
+					"jsonFile" : "target-sdl_headers_copy-Debug-407829ef010d5cc91780.json",
+					"name" : "sdl_headers_copy",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "the_adventure::@145eef247bfb46b6828c",
+					"jsonFile" : "target-the_adventure-Debug-0bb3066a889664d36dcb.json",
+					"name" : "the_adventure",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "the_adventure_resources::@a6dcd4b96501b4d6d326",
+					"jsonFile" : "target-the_adventure_resources-Debug-76baeb9f62f4f69381b3.json",
+					"name" : "the_adventure_resources",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "uninstall::@d9e926e66644a4d0d9f5",
+					"jsonFile" : "target-uninstall-Debug-63fbd5d1113a9b9f8550.json",
+					"name" : "uninstall",
+					"projectIndex" : 2
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/Axur/Desktop/proiecte c++/TheAdventure-main/TheAdventure-main/cmake-build-debug",
+		"source" : "C:/Users/Axur/Desktop/proiecte c++/TheAdventure-main/TheAdventure-main"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

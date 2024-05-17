@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "_deps/fmt-10.1.1-build",
+		"source" : "cmake-build-debug/_deps/fmt-10.1.1-src"
+	}
+}

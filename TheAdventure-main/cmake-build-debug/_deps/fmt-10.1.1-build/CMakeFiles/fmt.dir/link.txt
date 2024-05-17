@@ -1,0 +1,2 @@
+C:\Users\Axur\AppData\Local\Programs\CLion\bin\mingw\bin\ar.exe qc libfmtd.a CMakeFiles/fmt.dir/src/format.cc.obj
+C:\Users\Axur\AppData\Local\Programs\CLion\bin\mingw\bin\ranlib.exe libfmtd.a

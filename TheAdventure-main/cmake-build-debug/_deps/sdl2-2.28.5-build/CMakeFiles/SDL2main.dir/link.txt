@@ -1,0 +1,2 @@
+C:\Users\Axur\AppData\Local\Programs\CLion\bin\mingw\bin\ar.exe qc libSDL2main.a CMakeFiles/SDL2main.dir/src/main/windows/SDL_windows_main.c.obj
+C:\Users\Axur\AppData\Local\Programs\CLion\bin\mingw\bin\ranlib.exe libSDL2main.a
